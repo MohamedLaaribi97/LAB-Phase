@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <title>Abonné vous</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-section">
+      <div class="brand-main">
+        <a href="index.html" id="title-link"> <h2>E-Bank</h2></a>
+      </div>
+      <div class="logo-pic">
+        <img src="/assets/bank.png" width="50" alt="" />
+      </div>
+    </main>
+    <form class="row g-3" id="sign-up-form">
+      <div class="col-md-6">
+        <label for="inputName" class="form-label" id="firstName"
+          >First Name</label
+        >
+        <input
+          type="name"
+          class="form-control"
+          id="inputFName"
+          placeholder="Your First Name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputName" class="form-label" id="lastName"
+          >Last Name</label
+        >
+        <input
+          type="name"
+          class="form-control"
+          id="inputLName"
+          placeholder="Your Last Name"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword" class="form-label" id="pass">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          name="psw"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+          required
+        />
+      </div>
+      <div id="message">
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label" id="confirmPass"
+          >Confirm Password</label
+        >
+        <input type="password" class="form-control" id="inputPassword1" />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label" id="email">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail"
+          placeholder="username@gmail.com"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          placeholder="Apartment, studio, or floor"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>Tunis</option>
+          <option>Nabeul</option>
+          <option>Sfax</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" />
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" />
+          <label class="form-check-label" for="gridCheck"> Check me out </label>
+        </div>
+      </div>
+    </form>
+    <div class="col-12">
+      <button class="btn btn-primary" id="cnx-btn" onclick="validForm()">
+        <a href="./moncompte.html">Sign Up</a>
+      </button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      var myInput = document.getElementById("inputPassword");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+
+      // When the user clicks on the password field, show the message box
+      myInput.onfocus = function () {
+        document.getElementById("message").style.display = "block";
+      };
+
+      // When the user clicks outside of the password field, hide the message box
+      myInput.onblur = function () {
+        document.getElementById("message").style.display = "none";
+      };
+
+      // When the user starts to type something inside the password field
+      myInput.onkeyup = function () {
+        //  lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        } else {
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+
+        //  capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+          number.classList.remove("invalid");
+          number.classList.add("valid");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("invalid");
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        } else {
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      };
+    </script>
+  </body>
+</html>
