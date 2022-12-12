@@ -30,6 +30,19 @@ a {
 .btn {
   margin-right: 10px;
 }
+#redirect1:hover {
+  background-color: #fff;
+  color: #198754;
+  border-color: #fff;
+}
+#acceuilbtn {
+  margin-top: 3px;
+}
+#acceuilbtn:hover {
+  background-color: #fff;
+  color: #198754;
+  border: #fff;
+}
 #signupbtn:hover {
   background-color: #fff;
   color: #198754;
@@ -224,6 +237,7 @@ body {
   border-color: #fff;
   color: #198754;
 }
+
 #input {
   margin: 15px;
   font: bold;
@@ -235,6 +249,12 @@ body {
 }
 .g-3 {
   margin: 10px;
+}
+#sign-up-form {
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px;
 }
 .brand-main {
   display: flex;
@@ -292,8 +312,8 @@ main {
     display: flex;
     flex-direction: column;
   }
-  main{
-    margin-top:250px
+  main {
+    margin-top: 250px;
   }
 }
 

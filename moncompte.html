@@ -28,7 +28,9 @@
     <!--connexion section start-->
     <section class="connexion-section">
       <div class="identifiant-block">
-        <label for="validationCustom01" class="form-label">Conectez-vous</label>
+        <label for="validationCustom01" class="form-label" id="connect"
+          >Connect</label
+        >
       </div>
       <form class="row g-4 needs-validation" id="myForm" novalidate>
         <div class="identifiant-block">
@@ -38,6 +40,7 @@
               class="form-control"
               id="validationCustom01"
               placeholder="saisir votre identifiant"
+              onchange="formctrl()"
             />
           </div>
         </div>
@@ -48,6 +51,7 @@
               class="form-control"
               id="validationCustom02"
               placeholder="saisir votre mot de passe"
+              onchange="formctrl()"
             />
           </div>
         </div>
@@ -55,8 +59,8 @@
       <div class="identifiant-block">
         <div class="connexion-btn">
           <a href="" id="redirect">
-            <button class="btn btn-primary" id="cnx-btn" onclick="formctrl()">
-              Connexion
+            <button class="btn btn-primary" id="cnx-btn" >
+              Sign In
             </button>
           </a>
         </div>

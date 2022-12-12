@@ -4,20 +4,20 @@ let month = d.getMonth();
 let year = d.getFullYear();
 let hour = d.getHours();
 let minutes = d.getMinutes();
+var myform = document.getElementById("myForm");
+var sufelment = document.getElementById("sign-up-form");
 
 function formctrl() {
-  id = document.getElementById("myForm").elements[0].value;
-  mdp = document.getElementById("myForm").elements[1].value;
-  if (id.length == 0) {
-    alert("saisir votre identifiant");
+  id = myform.elements[0].value;
+  mdp = myform.elements[1].value;
+  if (id.length == 0) { document.getElementById("connect").style.color = "red"
   }
-  if (mdp == 0) alert("saisir votre mot de passe");
+  if (mdp == 0) document.getElementById("connect").style.color = "red";
   else document.getElementById("redirect").setAttribute("href", "./index.html");
   localStorage.setItem("id", id);
-  console.log(id);
 }
 
-if (localStorage.getItem('id')) {
+if (localStorage.getItem("id")) {
   let newElement = document.createElement("div");
 
   newElement.innerHTML = ` 
@@ -62,7 +62,7 @@ if (localStorage.getItem('id')) {
   <p>time</p>
 </div>
 <div class="greating">
-  <p id="nam">${localStorage.getItem('id')}</p>
+  <p id="nam">${localStorage.getItem("id")}</p>
   <p id="time">${
     day + "/" + month + "/" + year + "-" + hour + ":" + minutes
   }</p>
@@ -74,36 +74,32 @@ if (localStorage.getItem('id')) {
 //when the user click th sign up button of the form
 //form validation
 function validForm() {
-  firstname = document.getElementById("sign-up-form").elements[0].value;
-  lastname = document.getElementById("sign-up-form").elements[1].value;
-  password = document.getElementById("sign-up-form").elements[2].value;
-  confirmPass = document.getElementById("sign-up-form").elements[3].value;
-  email = document.getElementById("sign-up-form").elements[4].value;
-  adress = document.getElementById("sign-up-form").elements[5].value;
-  city = document.getElementById("sign-up-form").elements[6].value;
-  state = document.getElementById("sign-up-form").elements[7].value;
-  zip = document.getElementById("sign-up-form").elements[8].value;
-  checked = document.getElementById("sign-up-form").elements[9].value;
+  firstname = sufelment.elements[0].value;
+  lastname = sufelment.elements[1].value;
+  password = sufelment.elements[2].value;
+  confirmPass = sufelment.elements[3].value;
+  email = sufelment.elements[4].value;
+  adress = sufelment.elements[5].value;
+  city = sufelment.elements[6].value;
+  state = sufelment.elements[7].value;
+  zip = sufelment.elements[8].value;
+  checked = sufelment.elements[9].value;
   if (firstname.length == 0) {
-    alert("sasir votre nom");
     document.getElementById("firstName").style.color = "red";
   } else {
     document.getElementById("firstName").style.color = "black";
   }
   if (lastname.length == 0) {
-    alert("sasir votre prenom");
     document.getElementById("lastName").style.color = "red";
   } else {
     document.getElementById("lastName").style.color = "black";
   }
   if (password.length == 0) {
-    alert("sasir votre mot de passe");
     document.getElementById("pass").style.color = "red";
   } else {
     document.getElementById("pass").style.color = "black";
   }
   if (password != confirmPass) {
-    alert("mot de passe doit etre conforme");
     document.getElementById("confirmPass").style.color = "red";
   } else {
     document.getElementById("confirmPass").style.color = "black";
@@ -113,18 +109,22 @@ function validForm() {
     email.indexOf("@") == 0 ||
     email.indexOf("@") == email.length - 1
   ) {
-    alert("le format de l'adresse email n'est pas valide");
     document.getElementById("email").style.color = "red";
   } else {
     document.getElementById("email").style.color = "black";
+    document
+      .getElementById("redirect1")
+      .setAttribute("href", "./moncompte.html");
   }
 }
 
 // when user want to convert from a currency to another
+var outputconvert = document.getElementById("output-convert");
 function convertcurrency() {
   input = document.getElementById("input-convert").value;
   inputstate = document.getElementById("inputState").value;
   outputstate = document.getElementById("outputState").value;
+
   if (input < 0) {
     alert("enter a valid number");
   } else if (
@@ -132,19 +132,19 @@ function convertcurrency() {
     (inputstate == "Euro" && outputstate == "Euro") ||
     (inputstate == "Dollars" && outputstate == "Dollars")
   ) {
-    document.getElementById("output-convert").value = input * 1;
+    outputconvert.value = input * 1;
   } else if (inputstate == "TND" && outputstate == "Euro") {
-    document.getElementById("output-convert").value = input * 0.332;
+    outputconvert.value = input * 0.332;
   } else if (inputstate == "TND" && outputstate == "Dollars") {
-    document.getElementById("output-convert").value = input * 0.351;
+    outputconvert.value = input * 0.351;
   } else if (inputstate == "Euro" && outputstate == "TND") {
-    document.getElementById("output-convert").value = input * 3.32;
+    outputconvert.value = input * 3.32;
   } else if (inputstate == "Euro" && outputstate == "Dollars") {
-    document.getElementById("output-convert").value = input * 0.89;
+    outputconvert.value = input * 0.89;
   } else if (inputstate == "Dollars" && outputstate == "TND") {
-    document.getElementById("output-convert").value = input * 3.51;
+    outputconvert.value = input * 3.51;
   } else if (inputstate == "Dollars" && outputstate == "Euro") {
-    document.getElementById("output-convert").value = input * 1.11;
+    outputconvert.value = input * 1.11;
   }
 }
 // gif animation when the user enter the main page

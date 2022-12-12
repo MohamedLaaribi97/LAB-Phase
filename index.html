@@ -42,6 +42,7 @@
           <li class="nav-item">
             <button
               class="btn btn-outline-success"
+              id="acceuilbtn"
               aria-current="page"
               href="index.html"
             >
@@ -49,13 +50,13 @@
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">À propos</a>
+            <a class="nav-link" href="#About-us">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#nosAvantages">Nos Avantages</a>
+            <a class="nav-link" href="#nosAvantages">Our Advantages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#nosContact">Contact</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -76,7 +77,7 @@
                 d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
               />
             </svg>
-            Devenir abonné</a
+            subscribe</a
           >
           <a class="btn btn-outline-success" href="moncompte.html">
             <svg
@@ -91,17 +92,15 @@
                 d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1h4Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
               />
             </svg>
-            Mon compte
+            sign in
           </a>
         </form>
       </div>
     </nav>
     <!-- navbar  ends -->
- 
+
     <!-- main  starts -->
-    <main>
-      
-      
+    <main id="About-us">
       <section id="account"></section>
       <section class="articles">
         <div class="article-container">
@@ -110,7 +109,9 @@
             <div class="card-body">
               <h4 class="card-title">My Account</h4>
               <p class="card-text">Consult Your Account credit here</p>
-              <a href="moncompte.html" class="btn btn-outline-success">Consult</a>
+              <a href="moncompte.html" class="btn btn-outline-success"
+                >Consult</a
+              >
             </div>
           </div>
           <div class="card" style="width: 18rem">
@@ -150,9 +151,9 @@
     >
       <div class="container">
         <div class="section-title">
-          <h2>Nos Avantages</h2>
+          <h2>Our Advantages</h2>
           <div class="bar"></div>
-          <p>Quels sont les avantages proposés par E-bank?</p>
+          <p>What are the advantages offered by E-bank?</p>
         </div>
         <div class="featured-boxes-inner">
           <div class="row m-0">
@@ -174,10 +175,10 @@
                     />
                   </svg>
                 </div>
-                <h4>Sécurité</h4>
+                <h4>Security</h4>
                 <p>
-                  Plateforme sécurisée avec des dispositifs d’authentification
-                  forte: empreinte digitale, identification biométrique
+                  Secure platform with strong authentication devices:
+                  fingerprint, biometric identification...
                 </p>
               </div>
             </div>
@@ -198,8 +199,8 @@
                     />
                   </svg>
                 </div>
-                <h4>Disponibilité</h4>
-                <p>Consulter le solde de vos comptes 24h/24 et 7j/7</p>
+                <h4>Availablity</h4>
+                <p>View your account balances 24h/24 and 7j/7</p>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-6 p-0">
@@ -219,10 +220,8 @@
                     />
                   </svg>
                 </div>
-                <h4>Instantanéité</h4>
-                <p>
-                  Exécuter vos transactions et suivre instantanément vos comptes
-                </p>
+                <h4>Instantaneity</h4>
+                <p>Execute your trades and instantly track your accounts</p>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-6 p-0">
@@ -242,11 +241,8 @@
                     />
                   </svg>
                 </div>
-                <h4>Commodité</h4>
-                <p>
-                  Exécuter en ligne et en toute simplicité vos ordres de
-                  virement
-                </p>
+                <h4>Convenience</h4>
+                <p>Easily execute your transfer orders online</p>
               </div>
             </div>
           </div>
@@ -270,7 +266,7 @@
     <!-- Feedback section  ends -->
 
     <!-- footer section  starts -->
-    <footer>
+    <footer id="nosContact">
       <section class="footer">
         <div class="icons-container">
           <div class="icons">
